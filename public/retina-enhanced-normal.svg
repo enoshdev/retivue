@@ -1,0 +1,74 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- CLAHE Enhanced Equalized Fundus Gradient (Green-filtered contrast enhancement) -->
+    <radialGradient id="enhancedFundusGrad_normal" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#2d5e38" />
+      <stop offset="45%" stop-color="#1f4427" />
+      <stop offset="75%" stop-color="#142e1a" />
+      <stop offset="95%" stop-color="#0a170d" />
+      <stop offset="100%" stop-color="#030804" />
+    </radialGradient>
+
+    <!-- Preprocessed Optic Disc -->
+    <radialGradient id="enhancedDiscGrad_normal" cx="45%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#eaffd9" />
+      <stop offset="65%" stop-color="#b8e892" />
+      <stop offset="90%" stop-color="#7eb854" />
+      <stop offset="100%" stop-color="#497828" />
+    </radialGradient>
+
+    <clipPath id="enhancedAperture_normal">
+      <circle cx="400" cy="400" r="370" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#enhancedAperture_normal)">
+    <!-- Equalized Dark Medical Field -->
+    <rect x="0" y="0" width="800" height="800" fill="#020703" />
+    <circle cx="400" cy="400" r="390" fill="url(#enhancedFundusGrad_normal)" />
+
+    <!-- CLAHE High-Frequency Spatial Grid / Illumination Flattening Texture -->
+    <g opacity="0.12">
+      <circle cx="480" cy="280" r="160" fill="#4ade80" />
+      <circle cx="290" cy="490" r="190" fill="#22c55e" />
+      <circle cx="540" cy="480" r="170" fill="#15803d" />
+    </g>
+
+    <!-- Fovea Avascular Zone (Macula Center) with high local contrast -->
+    <circle cx="490" cy="415" r="45" fill="#08140a" opacity="0.9" />
+    <circle cx="490" cy="415" r="3.5" fill="#ecfccb" opacity="0.85" />
+
+    <!-- Optic Disc with equalized neuroretinal rim -->
+    <ellipse cx="270" cy="400" rx="38" ry="46" fill="url(#enhancedDiscGrad_normal)" />
+    <ellipse cx="266" cy="400" rx="18" ry="22" fill="#f7fee7" opacity="0.95" />
+
+    <!-- Enhanced High-Definition Vascular Tree (Clean, crisp, no leakage) -->
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Superior Temporal Arcade -->
+      <path d="M 270 385 C 310 290, 400 230, 570 220 C 650 210, 720 250, 770 290" stroke="#051207" stroke-width="6.5" fill="none" opacity="0.95" />
+      <path d="M 275 382 C 318 295, 408 240, 580 230 C 640 225, 710 265, 760 305" stroke="#102e14" stroke-width="4.2" fill="none" opacity="0.98" />
+
+      <!-- Inferior Temporal Arcade -->
+      <path d="M 270 415 C 320 515, 410 575, 580 590 C 660 600, 730 560, 780 510" stroke="#051207" stroke-width="6.5" fill="none" opacity="0.95" />
+      <path d="M 275 418 C 328 510, 418 565, 590 578 C 650 585, 720 545, 770 495" stroke="#102e14" stroke-width="4.2" fill="none" opacity="0.98" />
+
+      <!-- Nasal Vessels -->
+      <path d="M 262 385 C 220 300, 170 240, 50 240" stroke="#051207" stroke-width="5.5" fill="none" opacity="0.95" />
+      <path d="M 266 382 C 226 305, 178 250, 60 250" stroke="#102e14" stroke-width="3.5" fill="none" opacity="0.98" />
+      <path d="M 262 415 C 220 500, 170 560, 50 560" stroke="#051207" stroke-width="5.5" fill="none" opacity="0.95" />
+      <path d="M 266 418 C 226 495, 178 550, 60 550" stroke="#102e14" stroke-width="3.5" fill="none" opacity="0.98" />
+
+      <!-- Fine Microvascular Branches -->
+      <path d="M 340 320 C 390 330, 460 365, 490 380" stroke="#153e1a" stroke-width="2.5" fill="none" opacity="0.9" />
+      <path d="M 350 480 C 400 470, 460 465, 490 450" stroke="#153e1a" stroke-width="2.5" fill="none" opacity="0.9" />
+    </g>
+
+    <!-- Enhancement Watermark Badge -->
+    <g transform="translate(40, 720)">
+      <rect x="0" y="0" width="280" height="32" rx="8" fill="#061208" opacity="0.85" stroke="#22c55e" stroke-width="1" />
+      <text x="16" y="21" fill="#86efac" font-family="monospace" font-size="11" font-weight="bold">PREPROCESSED: CLAHE &amp; VESSEL NORMALIZED</text>
+    </g>
+  </g>
+
+  <circle cx="400" cy="400" r="370" stroke="#15803d" stroke-width="3" fill="none" />
+</svg>

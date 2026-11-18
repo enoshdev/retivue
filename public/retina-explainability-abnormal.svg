@@ -1,0 +1,115 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark Fundus Base -->
+    <radialGradient id="expFundusGrad_abnormal" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#4a180e" />
+      <stop offset="55%" stop-color="#2c0c06" />
+      <stop offset="85%" stop-color="#120402" />
+      <stop offset="100%" stop-color="#020000" />
+    </radialGradient>
+
+    <!-- Grad-CAM Jet Colormap Hotspots -->
+    <radialGradient id="gradcam_hotspot_1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff0000" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#ff5500" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#ffcc00" stop-opacity="0.65" />
+      <stop offset="75%" stop-color="#00ff88" stop-opacity="0.35" />
+      <stop offset="90%" stop-color="#0066ff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000055" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="gradcam_hotspot_2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff1100" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#ff8800" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#ffea00" stop-opacity="0.5" />
+      <stop offset="80%" stop-color="#00ccff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#001166" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="gradcam_hotspot_3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3300" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#ffaa00" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#33dd00" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#002288" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Low Ambient Attention Base -->
+    <radialGradient id="gradcam_ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0033aa" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#001155" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000022" stop-opacity="0" />
+    </radialGradient>
+
+    <clipPath id="expAperture_abnormal">
+      <circle cx="400" cy="400" r="370" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#expAperture_abnormal)">
+    <!-- Base Fundus Layer -->
+    <rect x="0" y="0" width="800" height="800" fill="#040101" />
+    <circle cx="400" cy="400" r="390" fill="url(#expFundusGrad_abnormal)" />
+
+    <!-- Underlying Retinal Anatomy Ghosted for Spatial Context -->
+    <ellipse cx="270" cy="400" rx="38" ry="46" fill="#f8c878" opacity="0.35" />
+    <circle cx="490" cy="415" r="45" fill="#1f0703" opacity="0.7" />
+
+    <!-- Ghosted Arcades -->
+    <g stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+      <path d="M 270 385 C 310 290, 400 230, 570 220 C 650 210, 720 250, 770 290" stroke="#000" stroke-width="5" fill="none" />
+      <path d="M 270 415 C 320 515, 410 575, 580 590 C 660 600, 730 560, 780 510" stroke="#000" stroke-width="5" fill="none" />
+    </g>
+
+    <!-- Ambient Low-Energy Feature Space -->
+    <circle cx="430" cy="400" r="320" fill="url(#gradcam_ambient)" />
+
+    <!-- GRAD-CAM ATTENTION HOTSPOTS (High Activation over Temporal Arcade Lesions) -->
+    <!-- Hotspot 1: Superior Temporal Lesion Cluster -->
+    <ellipse cx="490" cy="350" rx="140" ry="110" fill="url(#gradcam_hotspot_1)" />
+
+    <!-- Hotspot 2: Inferior Temporal Blot Hemorrhage / Exudate Cluster -->
+    <ellipse cx="460" cy="460" rx="130" ry="100" fill="url(#gradcam_hotspot_2)" />
+
+    <!-- Hotspot 3: Macular Fringe Microaneurysms -->
+    <ellipse cx="540" cy="400" rx="100" ry="85" fill="url(#gradcam_hotspot_3)" />
+
+    <!-- High-Salience Contour Lines (Topographic gradient simulation) -->
+    <ellipse cx="490" cy="350" rx="80" ry="60" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3 3" fill="none" opacity="0.4" />
+    <ellipse cx="490" cy="350" rx="40" ry="30" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6" />
+    <ellipse cx="460" cy="460" rx="75" ry="55" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3 3" fill="none" opacity="0.4" />
+    <ellipse cx="460" cy="460" rx="35" ry="25" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6" />
+
+    <!-- Scientific Colorbar Legend -->
+    <g transform="translate(680, 240)">
+      <rect x="0" y="0" width="22" height="240" rx="4" fill="#0c0d12" stroke="#27272a" stroke-width="1" />
+      <defs>
+        <linearGradient id="expColorbarGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ff0000" />
+          <stop offset="25%" stop-color="#ffaa00" />
+          <stop offset="50%" stop-color="#00ff88" />
+          <stop offset="75%" stop-color="#0088ff" />
+          <stop offset="100%" stop-color="#000044" />
+        </linearGradient>
+      </defs>
+      <rect x="4" y="6" width="14" height="228" rx="2" fill="url(#expColorbarGrad)" />
+      <text x="32" y="18" fill="#f87171" font-family="monospace" font-size="9" font-weight="bold">HIGH (0.95)</text>
+      <text x="32" y="125" fill="#facc15" font-family="monospace" font-size="9">MED (0.50)</text>
+      <text x="32" y="230" fill="#60a5fa" font-family="monospace" font-size="9">LOW (0.05)</text>
+    </g>
+
+    <!-- Top Left Disclaimer Badge -->
+    <g transform="translate(40, 40)">
+      <rect x="0" y="0" width="280" height="26" rx="6" fill="#18181b" stroke="#f97316" stroke-width="1" />
+      <text x="12" y="17" fill="#fdba74" font-family="monospace" font-size="10" font-weight="bold">SIMULATED EXPLAINABILITY OUTPUT</text>
+    </g>
+
+    <!-- Bottom Readout Bar -->
+    <g transform="translate(40, 715)">
+      <rect x="0" y="0" width="360" height="38" rx="8" fill="#090d16" opacity="0.9" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="18" fill="#cbd5e1" font-family="monospace" font-size="9" font-weight="bold">STAGE-4 FEATURE ATTRIBUTION (GRAD-CAM)</text>
+      <text x="12" y="31" fill="#94a3b8" font-family="monospace" font-size="8">Focal activation concentrated on temporal microvascular clusters</text>
+    </g>
+  </g>
+
+  <circle cx="400" cy="400" r="370" stroke="#f97316" stroke-width="3" fill="none" />
+</svg>

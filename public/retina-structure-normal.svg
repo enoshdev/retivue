@@ -1,0 +1,75 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="structFundusGrad_normal" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#3d140a" />
+      <stop offset="45%" stop-color="#2a0c06" />
+      <stop offset="75%" stop-color="#190603" />
+      <stop offset="95%" stop-color="#0a0201" />
+      <stop offset="100%" stop-color="#020000" />
+    </radialGradient>
+
+    <clipPath id="structAperture_normal">
+      <circle cx="400" cy="400" r="370" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#structAperture_normal)">
+    <!-- Base Retinal Canvas -->
+    <rect x="0" y="0" width="800" height="800" fill="#080201" />
+    <circle cx="400" cy="400" r="390" fill="url(#structFundusGrad_normal)" />
+
+    <!-- Optic Disc Base -->
+    <ellipse cx="270" cy="400" rx="38" ry="46" fill="#f8c878" opacity="0.45" />
+
+    <!-- Vascular Tree with Cyan Segmentation Highlight Glow -->
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 270 385 C 310 290, 400 230, 570 220 C 650 210, 720 250, 770 290" stroke="#00f0ff" stroke-width="4" fill="none" opacity="0.8" />
+      <path d="M 270 415 C 320 515, 410 575, 580 590 C 660 600, 730 560, 780 510" stroke="#00f0ff" stroke-width="4" fill="none" opacity="0.8" />
+      <path d="M 262 385 C 220 300, 170 240, 50 240" stroke="#00f0ff" stroke-width="3" fill="none" opacity="0.75" />
+      <path d="M 262 415 C 220 500, 170 560, 50 560" stroke="#00f0ff" stroke-width="3" fill="none" opacity="0.75" />
+      <path d="M 340 320 C 390 330, 460 365, 490 380" stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.65" />
+      <path d="M 350 480 C 400 470, 460 465, 490 450" stroke="#00f0ff" stroke-width="1.8" fill="none" opacity="0.65" />
+    </g>
+
+    <!-- ANATOMICAL RETICLES -->
+    <!-- Optic Disc Reticle -->
+    <ellipse cx="270" cy="400" rx="46" ry="54" stroke="#4ade80" stroke-width="2" stroke-dasharray="5 3" fill="none" />
+    <g transform="translate(270, 335)">
+      <rect x="-65" y="-12" width="130" height="22" rx="4" fill="#052e16" stroke="#4ade80" stroke-width="1" />
+      <text x="0" y="3" fill="#86efac" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">OPTIC DISC [OD]</text>
+    </g>
+
+    <!-- Fovea / Macula Caliper -->
+    <circle cx="490" cy="415" r="54" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="4 3" fill="none" />
+    <circle cx="490" cy="415" r="3.5" fill="#4ade80" />
+    <g transform="translate(490, 485)">
+      <rect x="-70" y="-10" width="140" height="20" rx="4" fill="#052e16" stroke="#4ade80" stroke-width="1" />
+      <text x="0" y="4" fill="#86efac" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">FOVEA PRESERVED</text>
+    </g>
+
+    <!-- Green Assessment Notification Badge -->
+    <g transform="translate(430, 350)">
+      <rect x="0" y="0" width="220" height="30" rx="6" fill="#052e16" stroke="#22c55e" stroke-width="1.25" />
+      <circle cx="16" cy="15" r="5" fill="#22c55e" />
+      <text x="30" y="19" fill="#bbf7d0" font-family="monospace" font-size="9" font-weight="bold">NO LESIONS DETECTED</text>
+    </g>
+
+    <!-- Segmented Vessel Tree Legend -->
+    <g transform="translate(40, 680)">
+      <rect x="0" y="0" width="290" height="72" rx="8" fill="#090d16" opacity="0.9" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="20" fill="#94a3b8" font-family="monospace" font-size="9" font-weight="bold">SIMULATED RETINAL STRUCTURES</text>
+      <circle cx="20" cy="36" r="4" fill="#00f0ff" />
+      <text x="32" y="40" fill="#e2e8f0" font-family="monospace" font-size="9">Intact Vascular Caliber (A/V: 2:3)</text>
+      <circle cx="20" cy="54" r="4" fill="#22c55e" />
+      <text x="32" y="58" fill="#86efac" font-family="monospace" font-size="9">Optic Disc &amp; Macular Reflex Intact</text>
+    </g>
+
+    <!-- Top Label -->
+    <g transform="translate(40, 40)">
+      <rect x="0" y="0" width="240" height="26" rx="6" fill="#18181b" stroke="#22c55e" stroke-width="1" />
+      <text x="12" y="17" fill="#86efac" font-family="monospace" font-size="10" font-weight="bold">SIMULATED DEMO ANALYSIS</text>
+    </g>
+  </g>
+
+  <circle cx="400" cy="400" r="370" stroke="#22c55e" stroke-width="3" fill="none" />
+</svg>

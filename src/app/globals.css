@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Retivue Original Premium Botanical Heritage Tokens */
+    --canvas-base: #faf9f5;
+    --canvas-subtle: #f5f3ec;
+    --canvas-card: #ffffff;
+    --canvas-dark: #1a1c16;
+    --canvas-obsidian: #090a07;
+
+    --border-soft: #e8e4d8;
+    --border-subtle: #ddd8c8;
+    --border-dark: #2d3216;
+
+    --ink-primary: #1c1d1a;
+    --ink-secondary: #4a4c44;
+    --ink-muted: #7a7d72;
+    --ink-faint: #a6a99e;
+
+    /* Primary Olive Brand Color (From Reference) */
+    --olive-primary: #4a5320;
+    --olive-hover: #3e461a;
+    --olive-subtle: #f2f4e8;
+    --olive-border: #d8debe;
+
+    /* Secondary Botanical Green */
+    --botanical-accent: #6f7d3e;
+    --botanical-hover: #5d6a33;
+
+    /* Clinical Semantic Triage Tokens */
+    --triage-safe: #2e6930;
+    --triage-safe-bg: #f0f6f0;
+    --triage-safe-border: #c5dec5;
+
+    --triage-caution: #b46b12;
+    --triage-caution-bg: #fdf7ee;
+    --triage-caution-border: #f5dec0;
+
+    --triage-urgent: #a82828;
+    --triage-urgent-pip: #c93434;
+    --triage-urgent-bg: #fcf0f0;
+    --triage-urgent-border: #f6caca;
+  }
+
+  body {
+    background-color: var(--canvas-base);
+    color: var(--ink-primary);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  }
+
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Retivue Premium Botanical Button Styles */
+.btn-olive-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #4a5320;
+  color: #ffffff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  line-height: 1.25rem;
+  box-shadow: 0 1px 2px 0 rgba(74, 83, 32, 0.15);
+}
+.btn-olive-primary:hover {
+  background-color: #3e461a;
+  box-shadow: 0 2px 4px 0 rgba(74, 83, 32, 0.25);
+}
+
+.btn-olive-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  color: #1c1d1a;
+  border: 1px solid #e8e4d8;
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  line-height: 1.25rem;
+}
+.btn-olive-secondary:hover {
+  background-color: #f5f3ec;
+  border-color: #ddd8c8;
+}
+
+.btn-olive-urgent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #a82828;
+  color: #ffffff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  line-height: 1.25rem;
+}
+.btn-olive-urgent:hover {
+  background-color: #8c1e1e;
+}

@@ -1,0 +1,85 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark Fundus Base -->
+    <radialGradient id="expFundusGrad_normal" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#4a180e" />
+      <stop offset="55%" stop-color="#2c0c06" />
+      <stop offset="85%" stop-color="#120402" />
+      <stop offset="100%" stop-color="#020000" />
+    </radialGradient>
+
+    <!-- Low Uniform Distributed Ambient Attention (No Focal Hotspots) -->
+    <radialGradient id="gradcam_ambient_normal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#0369a1" stop-opacity="0.18" />
+      <stop offset="80%" stop-color="#075985" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="faint_baseline_ring" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
+      <stop offset="70%" stop-color="#0284c7" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <clipPath id="expAperture_normal">
+      <circle cx="400" cy="400" r="370" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#expAperture_normal)">
+    <!-- Base Fundus Layer -->
+    <rect x="0" y="0" width="800" height="800" fill="#040101" />
+    <circle cx="400" cy="400" r="390" fill="url(#expFundusGrad_normal)" />
+
+    <!-- Underlying Retinal Anatomy Ghosted -->
+    <ellipse cx="270" cy="400" rx="38" ry="46" fill="#f8c878" opacity="0.35" />
+    <circle cx="490" cy="415" r="45" fill="#1f0703" opacity="0.7" />
+
+    <!-- Ghosted Arcades -->
+    <g stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+      <path d="M 270 385 C 310 290, 400 230, 570 220 C 650 210, 720 250, 770 290" stroke="#000" stroke-width="5" fill="none" />
+      <path d="M 270 415 C 320 515, 410 575, 580 590 C 660 600, 730 560, 780 510" stroke="#000" stroke-width="5" fill="none" />
+    </g>
+
+    <!-- Distributed Low-Energy Baseline Attention Layer (No localized anomaly spikes) -->
+    <circle cx="400" cy="400" r="360" fill="url(#gradcam_ambient_normal)" />
+    <ellipse cx="440" cy="410" rx="220" ry="180" fill="url(#faint_baseline_ring)" />
+
+    <!-- Scientific Colorbar Legend -->
+    <g transform="translate(680, 240)">
+      <rect x="0" y="0" width="22" height="240" rx="4" fill="#0c0d12" stroke="#27272a" stroke-width="1" />
+      <defs>
+        <linearGradient id="expColorbarGrad_normal" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ff0000" />
+          <stop offset="25%" stop-color="#ffaa00" />
+          <stop offset="50%" stop-color="#00ff88" />
+          <stop offset="75%" stop-color="#0088ff" />
+          <stop offset="100%" stop-color="#000044" />
+        </linearGradient>
+      </defs>
+      <rect x="4" y="6" width="14" height="228" rx="2" fill="url(#expColorbarGrad_normal)" />
+      <text x="32" y="18" fill="#f87171" font-family="monospace" font-size="9" font-weight="bold">HIGH (0.95)</text>
+      <text x="32" y="125" fill="#facc15" font-family="monospace" font-size="9">MED (0.50)</text>
+      <text x="32" y="230" fill="#60a5fa" font-family="monospace" font-size="9">LOW (0.05)</text>
+      <!-- Indicator Needle at Low Baseline -->
+      <polygon points="26,220 32,216 32,224" fill="#38bdf8" />
+      <line x1="2" y1="220" x2="20" y2="220" stroke="#ffffff" stroke-width="1.5" />
+    </g>
+
+    <!-- Top Left Disclaimer Badge -->
+    <g transform="translate(40, 40)">
+      <rect x="0" y="0" width="280" height="26" rx="6" fill="#18181b" stroke="#38bdf8" stroke-width="1" />
+      <text x="12" y="17" fill="#7dd3fc" font-family="monospace" font-size="10" font-weight="bold">SIMULATED EXPLAINABILITY OUTPUT</text>
+    </g>
+
+    <!-- Bottom Readout Bar -->
+    <g transform="translate(40, 715)">
+      <rect x="0" y="0" width="380" height="38" rx="8" fill="#090d16" opacity="0.9" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="18" fill="#cbd5e1" font-family="monospace" font-size="9" font-weight="bold">DISTRIBUTED BASELINE ATTENTION (GRAD-CAM)</text>
+      <text x="12" y="31" fill="#38bdf8" font-family="monospace" font-size="8">Uniform low-evidence response • No focal pathology hotspot detected</text>
+    </g>
+  </g>
+
+  <circle cx="400" cy="400" r="370" stroke="#38bdf8" stroke-width="3" fill="none" />
+</svg>

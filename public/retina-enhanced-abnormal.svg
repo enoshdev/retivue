@@ -1,0 +1,113 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- CLAHE Enhanced Equalized Fundus Gradient (Green-filtered contrast enhancement) -->
+    <radialGradient id="enhancedFundusGrad_abnormal" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#2d5e38" />
+      <stop offset="45%" stop-color="#1f4427" />
+      <stop offset="75%" stop-color="#142e1a" />
+      <stop offset="95%" stop-color="#0a170d" />
+      <stop offset="100%" stop-color="#030804" />
+    </radialGradient>
+
+    <!-- Preprocessed Optic Disc -->
+    <radialGradient id="enhancedDiscGrad" cx="45%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#eaffd9" />
+      <stop offset="65%" stop-color="#b8e892" />
+      <stop offset="90%" stop-color="#7eb854" />
+      <stop offset="100%" stop-color="#497828" />
+    </radialGradient>
+
+    <clipPath id="enhancedAperture_abnormal">
+      <circle cx="400" cy="400" r="370" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#enhancedAperture_abnormal)">
+    <!-- Equalized Dark Medical Field -->
+    <rect x="0" y="0" width="800" height="800" fill="#020703" />
+    <circle cx="400" cy="400" r="390" fill="url(#enhancedFundusGrad_abnormal)" />
+
+    <!-- CLAHE High-Frequency Spatial Grid / Illumination Flattening Texture -->
+    <g opacity="0.12">
+      <circle cx="480" cy="280" r="160" fill="#4ade80" />
+      <circle cx="290" cy="490" r="190" fill="#22c55e" />
+      <circle cx="540" cy="480" r="170" fill="#15803d" />
+    </g>
+
+    <!-- Fovea Avascular Zone (Macula Center) with high local contrast -->
+    <circle cx="490" cy="415" r="45" fill="#08140a" opacity="0.9" />
+    <circle cx="490" cy="415" r="3.5" fill="#ecfccb" opacity="0.85" />
+
+    <!-- Optic Disc with equalized neuroretinal rim -->
+    <ellipse cx="270" cy="400" rx="38" ry="46" fill="url(#enhancedDiscGrad)" />
+    <ellipse cx="266" cy="400" rx="18" ry="22" fill="#f7fee7" opacity="0.95" />
+
+    <!-- Enhanced High-Definition Vascular Tree (Sharpened Microvessels) -->
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <!-- Superior Temporal Arcade -->
+      <path d="M 270 385 C 310 290, 400 230, 570 220 C 650 210, 720 250, 770 290" stroke="#051207" stroke-width="6.5" fill="none" opacity="0.95" />
+      <path d="M 275 382 C 318 295, 408 240, 580 230 C 640 225, 710 265, 760 305" stroke="#102e14" stroke-width="4.2" fill="none" opacity="0.98" />
+
+      <!-- Inferior Temporal Arcade -->
+      <path d="M 270 415 C 320 515, 410 575, 580 590 C 660 600, 730 560, 780 510" stroke="#051207" stroke-width="6.5" fill="none" opacity="0.95" />
+      <path d="M 275 418 C 328 510, 418 565, 590 578 C 650 585, 720 545, 770 495" stroke="#102e14" stroke-width="4.2" fill="none" opacity="0.98" />
+
+      <!-- Nasal Vessels -->
+      <path d="M 262 385 C 220 300, 170 240, 50 240" stroke="#051207" stroke-width="5.5" fill="none" opacity="0.95" />
+      <path d="M 266 382 C 226 305, 178 250, 60 250" stroke="#102e14" stroke-width="3.5" fill="none" opacity="0.98" />
+      <path d="M 262 415 C 220 500, 170 560, 50 560" stroke="#051207" stroke-width="5.5" fill="none" opacity="0.95" />
+      <path d="M 266 418 C 226 495, 178 550, 60 550" stroke="#102e14" stroke-width="3.5" fill="none" opacity="0.98" />
+
+      <!-- Fine Microvascular Branches with CLAHE Edge Sharpening -->
+      <path d="M 340 320 C 390 330, 460 365, 490 380" stroke="#153e1a" stroke-width="2.5" fill="none" opacity="0.9" />
+      <path d="M 350 480 C 400 470, 460 465, 490 450" stroke="#153e1a" stroke-width="2.5" fill="none" opacity="0.9" />
+    </g>
+
+    <!-- Pathologies rendered under high-contrast optical normalization -->
+    <g>
+      <!-- Microaneurysms (High contrast dark focal dots with halo) -->
+      <circle cx="450" cy="350" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="465" cy="335" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="510" cy="340" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="530" cy="380" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="545" cy="430" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="480" cy="470" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="440" cy="460" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="420" cy="380" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="515" cy="460" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="475" cy="490" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="560" cy="410" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="430" cy="340" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="500" cy="320" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="390" cy="430" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+      <circle cx="510" cy="495" r="3.2" fill="#000000" stroke="#bef264" stroke-width="0.8" />
+
+      <!-- Hard Exudates (Hyper-reflective distinct lipid deposits) -->
+      <circle cx="510" cy="390" r="4" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="518" cy="395" r="4.5" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="514" cy="403" r="3.2" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="525" cy="392" r="3.5" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="522" cy="408" r="2.8" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="470" cy="430" r="3.2" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="476" cy="435" r="4.8" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="468" cy="440" r="4.2" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="482" cy="438" r="4.2" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="535" cy="360" r="5" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="542" cy="365" r="3" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+      <circle cx="540" cy="355" r="4.2" fill="#ffffff" stroke="#fef08a" stroke-width="1" />
+
+      <!-- Blot Hemorrhages (Deep absorbing patches) -->
+      <ellipse cx="430" cy="420" rx="7" ry="5" fill="#000000" opacity="0.95" />
+      <ellipse cx="530" cy="450" rx="8" ry="6" fill="#000000" opacity="0.95" />
+      <ellipse cx="480" cy="330" rx="6" ry="5" fill="#000000" opacity="0.95" />
+    </g>
+
+    <!-- Enhancement Watermark Badge -->
+    <g transform="translate(40, 720)">
+      <rect x="0" y="0" width="280" height="32" rx="8" fill="#061208" opacity="0.85" stroke="#22c55e" stroke-width="1" />
+      <text x="16" y="21" fill="#86efac" font-family="monospace" font-size="11" font-weight="bold">PREPROCESSED: CLAHE &amp; VESSEL NORMALIZED</text>
+    </g>
+  </g>
+
+  <circle cx="400" cy="400" r="370" stroke="#15803d" stroke-width="3" fill="none" />
+</svg>

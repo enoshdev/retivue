@@ -1,0 +1,98 @@
+<svg width="1400" height="500" viewBox="0 0 1400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Choroid Deep Vascular Gradients -->
+    <radialGradient id="fundusGrad_moderate" cx="45%" cy="48%" r="52%">
+      <stop offset="0%" stop-color="#dd5826" />
+      <stop offset="45%" stop-color="#c43f18" />
+      <stop offset="75%" stop-color="#9a290d" />
+      <stop offset="95%" stop-color="#5a1405" />
+      <stop offset="100%" stop-color="#1a0401" />
+    </radialGradient>
+
+    <!-- Optic Disc Gradient -->
+    <radialGradient id="discGrad" cx="45%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#fff2c2" />
+      <stop offset="65%" stop-color="#f8c878" />
+      <stop offset="90%" stop-color="#e09540" />
+      <stop offset="100%" stop-color="#b85b20" />
+    </radialGradient>
+
+    <!-- Fovea Avascular Zone Gradient -->
+    <radialGradient id="foveaGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5e1507" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#7c1e0b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#c43f18" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glare Gradient for ungradeable -->
+    <radialGradient id="glareGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ffeedd" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    
+
+    <clipPath id="fundusAperture_moderate">
+      <rect x="0" y="0" width="1400" height="500" rx="28" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#fundusAperture_moderate)" opacity="1">
+    <!-- Background Retinal Canvas -->
+    <rect x="0" y="0" width="1400" height="500" fill="#0d0402" />
+    <circle cx="700" cy="250" r="979.9999999999999" fill="url(#fundusGrad_moderate)"  />
+
+    <!-- Subtle Choroidal Pigment Mottling Texture -->
+    <g opacity="0.18">
+      <circle cx="780" cy="130" r="160" fill="#751b08" />
+      <circle cx="590" cy="340" r="190" fill="#541205" />
+      <circle cx="840" cy="330" r="170" fill="#661706" />
+    </g>
+
+    <!-- Fovea Avascular Zone (Macula Center) -->
+    <circle cx="840" cy="265" r="45" fill="url(#foveaGrad)" />
+    <!-- Foveal light reflex -->
+    <circle cx="840" cy="265" r="3" fill="#ffddaa" opacity="0.65" />
+
+    <!-- Optic Disc -->
+    <ellipse cx="489.99999999999994" cy="250" rx="38" ry="46" fill="url(#discGrad)" />
+    <!-- Physiological Cup -->
+    <ellipse cx="485.99999999999994" cy="250" rx="18" ry="22" fill="#fffbe6" opacity="0.85" />
+
+    <!-- Primary Retinal Vascular Tree (Arterioles & Venules) -->
+    <g stroke-linecap="round" stroke-linejoin="round" >
+      <!-- Superior Temporal Venous Arcade (Deep Red, Thicker) -->
+      <path d="M 489.99999999999994 235 C 530 140, 620 80, 920 70 C 1000 60, 1320 100, 1370 140" stroke="#520904" stroke-width="5.5" fill="none" opacity="0.9" />
+      <!-- Superior Temporal Arteriole (Brighter Red, Thinner, A/V pair) -->
+      <path d="M 494.99999999999994 232 C 538 145, 628 90, 930 80 C 990 75, 1310 115, 1360 155" stroke="#9e1e0a" stroke-width="3.2" fill="none" opacity="0.95" />
+
+      <!-- Inferior Temporal Venous Arcade -->
+      <path d="M 489.99999999999994 265 C 540 365, 630 425, 930 440 C 1010 450, 1330 410, 1380 360" stroke="#520904" stroke-width="5.5" fill="none" opacity="0.9" />
+      <!-- Inferior Temporal Arteriole -->
+      <path d="M 494.99999999999994 268 C 548 360, 638 415, 940 428 C 1000 435, 1320 395, 1370 345" stroke="#9e1e0a" stroke-width="3.2" fill="none" opacity="0.95" />
+
+      <!-- Superior Nasal Vessels -->
+      <path d="M 481.99999999999994 235 C 439.99999999999994 150, 389.99999999999994 90, 50 90" stroke="#520904" stroke-width="4.5" fill="none" opacity="0.88" />
+      <path d="M 485.99999999999994 232 C 445.99999999999994 155, 397.99999999999994 100, 60 100" stroke="#9e1e0a" stroke-width="2.8" fill="none" opacity="0.95" />
+
+      <!-- Inferior Nasal Vessels -->
+      <path d="M 481.99999999999994 265 C 439.99999999999994 350, 389.99999999999994 410, 50 410" stroke="#520904" stroke-width="4.5" fill="none" opacity="0.88" />
+      <path d="M 485.99999999999994 268 C 445.99999999999994 345, 397.99999999999994 400, 60 400" stroke="#9e1e0a" stroke-width="2.8" fill="none" opacity="0.95" />
+
+      <!-- Microvascular Secondary Branches toward Macula -->
+      <path d="M 560 170 C 610 180, 810 215, 840 230" stroke="#8c1c0a" stroke-width="1.8" fill="none" opacity="0.75" />
+      <path d="M 570 330 C 620 320, 810 315, 840 300" stroke="#8c1c0a" stroke-width="1.8" fill="none" opacity="0.75" />
+    </g>
+
+    <!-- Pathologies (Microaneurysms, Exudates, Hemorrhages) -->
+    <g>
+      <circle cx="450" cy="350" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="465" cy="335" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="510" cy="340" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="530" cy="380" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="545" cy="430" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="480" cy="470" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="440" cy="460" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="420" cy="380" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="515" cy="460" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="475" cy="490" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="560" cy="410" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="430" cy="340" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="500" cy="320" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="390" cy="430" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="510" cy="495" r="2.8" fill="#880e0e" stroke="#ff2222" stroke-width="0.8" /><circle cx="510" cy="390" r="3.2828901189338033" fill="#ffeb3b" opacity="0.92" /><circle cx="518" cy="395" r="4.17300355268504" fill="#ffeb3b" opacity="0.92" /><circle cx="514" cy="403" r="3.0195765524733704" fill="#ffeb3b" opacity="0.92" /><circle cx="525" cy="392" r="2.898311116146025" fill="#ffeb3b" opacity="0.92" /><circle cx="522" cy="408" r="3.00393364827434" fill="#ffeb3b" opacity="0.92" /><circle cx="470" cy="430" r="2.7378394794031546" fill="#ffeb3b" opacity="0.92" /><circle cx="476" cy="435" r="3.0225579957030195" fill="#ffeb3b" opacity="0.92" /><circle cx="468" cy="440" r="3.63618997285125" fill="#ffeb3b" opacity="0.92" /><circle cx="482" cy="438" r="3.9296884660787605" fill="#ffeb3b" opacity="0.92" /><circle cx="535" cy="360" r="3.544113750624942" fill="#ffeb3b" opacity="0.92" /><circle cx="542" cy="365" r="3.843782634578761" fill="#ffeb3b" opacity="0.92" /><circle cx="540" cy="355" r="4.258981994247886" fill="#ffeb3b" opacity="0.92" /><ellipse cx="430" cy="420" rx="6" ry="4" fill="#4a0404" opacity="0.88" /><ellipse cx="530" cy="450" rx="7" ry="5" fill="#4a0404" opacity="0.88" /><ellipse cx="480" cy="330" rx="5" ry="4" fill="#4a0404" opacity="0.88" />
+    </g>
+
+    
+  </g>
+
+  <!-- Precision Aperture Outer Ring -->
+  
+</svg>
