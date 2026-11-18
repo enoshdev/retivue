@@ -61,7 +61,8 @@ datasets/
 *.7z
 
 # Phase 9: AI model checkpoints & experiment artifacts (always excluded)
-models/
+/models/
+/backend/models/
 *.pt
 *.pth
 *.onnx
